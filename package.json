@@ -7,7 +7,6 @@
     "doc": "docs",
     "lib": "lib"
   },
-  "private": true,
   "workspaces": [
     "lib",
     "docs"
@@ -68,5 +67,8 @@
     "**/coverage",
     "videos/",
     "**/build"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://nexus.srv.globalavl.com/repository/npm-private/"
+  }
 }
