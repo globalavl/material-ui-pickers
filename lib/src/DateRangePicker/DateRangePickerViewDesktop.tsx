@@ -121,7 +121,11 @@ export const DateRangePickerViewDesktop: React.FC<DesktopDateRangeCalendarProps>
   );
 
   const handlePreviewDayChange = (newPreviewRequest: MaterialUiPickersDate) => {
-    if (!isWithinRange(utils, newPreviewRequest, date)) {
+    const [start, end] = date;
+    const hasRangeSelected = Boolean(start && end);
+    if (hasRangeSelected) {
+      setRangePreviewDay(null);
+    } else if (!isWithinRange(utils, newPreviewRequest, date)) {
       setRangePreviewDay(newPreviewRequest);
     } else {
       setRangePreviewDay(null);
