@@ -43,7 +43,7 @@ interface DesktopDateRangeCalendarProps<TDate>
 }
 
 export const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       display: 'flex',
       flexDirection: 'row',
@@ -131,7 +131,11 @@ export function DateRangePickerViewDesktop<TDate>(props: DesktopDateRangeCalenda
   );
 
   const handlePreviewDayChange = (newPreviewRequest: TDate) => {
-    if (!isWithinRange(utils, newPreviewRequest, date)) {
+    const [start, end] = date;
+    const hasRangeSelected = Boolean(start && end);
+    if (hasRangeSelected) {
+      setRangePreviewDay(null);
+    } else if (!isWithinRange(utils, newPreviewRequest, date)) {
       setRangePreviewDay(newPreviewRequest);
     } else {
       setRangePreviewDay(null);

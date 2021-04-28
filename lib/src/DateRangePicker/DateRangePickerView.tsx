@@ -151,6 +151,10 @@ export function DateRangePickerView<TDate>(props: DateRangePickerViewProps<TDate
 
       setCurrentlySelectingRangeEnd(nextSelection);
 
+      if (currentlySelectingRangeEnd === 'start') {
+        newRange[1] = null;
+      }
+
       const isFullRangeSelected =
         currentlySelectingRangeEnd === 'end' && isRangeValid(utils, newRange);
 

@@ -1,7 +1,6 @@
 {
-  "name": "@material-ui/pickers",
-  "version": "4.0.0-alpha.12",
-  "private": true,
+  "name": "@nuragic/pickers",
+  "version": "4.0.0-alpha.12.globalavl.4",
   "description": "React components, that implements material design pickers for material-ui v4",
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -84,7 +83,7 @@
     "build:prepare-files": "node prepare-build-files.js",
     "build:bundle": "rollup --config",
     "build:typescript": "tsc --project tsconfig.json && tsc -p tsconfig.adapters.json",
-    "build": "yarn build:typescript && yarn build:bundle && yarn build:prepare-files",
+    "build": "yarn build:bundle && yarn build:prepare-files",
     "build:analyze": "yarn build",
     "release": "yarn build && yarn publish --tag -f next build"
   },
